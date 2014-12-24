@@ -1,0 +1,10 @@
+<h1> All Users </h1>
+
+<ul class="users">
+{{#each user in model}}
+  <li>
+  {{#link-to 'user.index' user.id}}{{gravatar-image email=user.email alt='John Otander gravatar' size=50 imgClass='gravatar'}}{{/link-to}}
+  {{#link-to 'user.index' user.id}}{{user.name}}{{/link-to}}
+  </li><br>
+{{/each}}
+</ul>
