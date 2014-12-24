@@ -25,6 +25,12 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+        'connect-src': "'self'  'unsafe-eval' http://*:3000",
+        'style-src': "'self'",
+        'script-src': "'self'  'unsafe-eval' http://*:3000",
+        'img-src': "'self' https://www.gravatar.com http://www.gravatar.com",
+    }
   }
 
   if (environment === 'test') {
