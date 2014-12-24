@@ -30,6 +30,7 @@
     "ember-cli-gravatar": "^1.5.0",
     "ember-cli-ic-ajax": "0.1.1",
     "ember-cli-inject-live-reload": "^1.3.0",
+    "ember-cli-pagination": "^0.6.3",
     "ember-cli-qunit": "0.1.2",
     "ember-data": "^1.0.0-beta.12",
     "ember-export-application-global": "^1.0.0",

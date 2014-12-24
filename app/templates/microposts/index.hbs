@@ -1,0 +1,26 @@
+<h3>Microposts ({{model.length}}) </h3>
+<ol class="microposts">
+  {{#each micropost in model}}
+  <li {{bind-attr class=micropost.id}}>
+        {{gravatar-image email=micropost.user.email alt=micropost.user.name size=50 class='gravatar'}}
+
+      <span class="user">{{link-to micropost.user.name 'user.index' micropost.user.id}}</span>
+      <span class="content">
+        {{micropost.content}}
+        {{! <%= image_tag micropost.picture.url if micropost.picture? %>}}
+      </span>
+      <span class="timestamp">
+        Posted 5 minutes ago.
+        {{!
+          <%= link_to "delete", micropost, method: :delete,
+                                           data: { confirm: "You sure?" } %>
+        }}
+      </span>
+    </li>
+
+  {{/each}}
+</ol>
+{{! <%= will_paginate @microposts %> }}
+
+
+{{page-numbers content=content numPagesToShow=4}}

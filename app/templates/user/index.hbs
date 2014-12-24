@@ -5,11 +5,7 @@
   <div class="col-md-8">
     {{! <%= render 'follow_form' if logged_in? %> }}
     {{! <% if @user.microposts.any? %> }}
-    <h3>Microposts {{model.microposts.length}} </h3>
-      <ol class="microposts">
-        {{! <%= render @microposts %> }}
-      </ol>
-      {{! <%= will_paginate @microposts %> }}
-      {{! <% end %> }}
+    {{outlet 'microposts'}}
+    {{! <% end %> }}
   </div>
 </div>
