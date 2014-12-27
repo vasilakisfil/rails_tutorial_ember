@@ -1,10 +1,25 @@
 <section class="user_info">
   <h1>
-  {{gravatar-image email=model.email alt='John Otander gravatar' size=50 imgClass='gravatar'}}
+  {{gravatar-image email=model.email alt=model.name size=80 class='gravatar'}}
   {{model.name}}
   </h1>
 </section>
 <section class="stats">
-  {{! <%= render 'shared/stats' %> }}
+  <div class="stats">
+    {{! <a href="<%= following_user_path(@user) %>"> }}
+    <a href="#">
+      <strong id="following" class="stat">
+        {{model.following.length}}
+      </strong>
+      following
+    </a>
+    {{! <a href="<%= followers_user_path(@user) %>"> }}
+    <a href="#">
+      <strong id="followers" class="stat">
+        {{model.followers.length}}
+      </strong>
+      followers
+    </a>
+  </div>
 </section>
 

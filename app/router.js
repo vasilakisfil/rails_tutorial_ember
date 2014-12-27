@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('contact');
   this.resource('users', function() {
     this.resource('user', { path: ':user_id'}, function() {
+
     });
   });
 });

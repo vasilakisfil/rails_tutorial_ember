@@ -15,3 +15,4 @@ export default Ember.ArrayController.extend({
   page: 1,
   perPage: 10
 });
+
