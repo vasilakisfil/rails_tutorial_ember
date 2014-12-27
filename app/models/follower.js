@@ -12,6 +12,6 @@ export default DS.Model.extend({
 
 
   microposts: DS.hasMany('micropost', {async: true}),
-  followings: DS.hasMany('user', {inverse: 'followers', async: true}),
-  followers: DS.hasMany('user', {inverse: 'followings', async: true})
+  followings: DS.hasMany('following', {async: true}),
+  followers: DS.hasMany('follower', {async: true})
 });

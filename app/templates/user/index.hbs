@@ -1,11 +1,9 @@
 <div class="row">
   <aside class="col-md-4">
-    {{user-profile model=model}}
+    {{user-profile model=model gravatarUsers=gravatarUsers}}
   </aside>
   <div class="col-md-8">
     {{! <%= render 'follow_form' if logged_in? %> }}
-    {{! <% if @user.microposts.any? %> }}
-    {{outlet 'microposts'}}
-    {{! <% end %> }}
+    {{outlet 'side-list'}}
   </div>
 </div>

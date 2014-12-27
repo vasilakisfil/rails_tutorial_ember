@@ -1,7 +1,6 @@
-<h1> All users </h1>
-
-<br>
-{{page-numbers content=model numPagesToShow=4}}
+{{#if showTopPageNumbers}}
+  {{page-numbers content=model numPagesToShow=4}}
+{{/if}}
 <br>
 <ul class="users">
 {{#each user in model}}
@@ -12,4 +11,7 @@
 {{/each}}
 </ul>
 <br>
-{{page-numbers content=content numPagesToShow=4}}
+{{#if showBottomPageNumbers}}
+  {{page-numbers content=model numPagesToShow=4}}
+{{/if}}
+
