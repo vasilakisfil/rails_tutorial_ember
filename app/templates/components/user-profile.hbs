@@ -4,22 +4,29 @@
   {{model.name}}
   </h1>
 </section>
+
 <section class="stats">
   <div class="stats">
-    {{! <a href="<%= following_user_path(@user) %>"> }}
-    <a href="#">
+    {{#link-to 'user.following'}}
       <strong id="following" class="stat">
-        {{model.following.length}}
+        {{model.followings.length}}
       </strong>
       following
-    </a>
-    {{! <a href="<%= followers_user_path(@user) %>"> }}
-    <a href="#">
+    {{/link-to}}
+
+    {{#link-to 'user.followers'}}
       <strong id="followers" class="stat">
         {{model.followers.length}}
       </strong>
       followers
-    </a>
+    {{/link-to}}
+  </div>
+  <div class="user_avatars">
+    {{#each follower in gravatarUsers}}
+      {{#link-to 'user.index' follower.id}}
+        {{gravatar-image email=follower.email alt=follower.name size=30 class='gravatar'}}
+      {{/link-to}}
+    {{/each}}
   </div>
 </section>
 

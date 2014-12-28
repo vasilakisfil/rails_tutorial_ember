@@ -19,11 +19,11 @@ export default Ember.Route.extend(RouteMixin, {
   },
 
   renderTemplate: function() {
-    this.render('user/index', {
-    });
+    this.render('user/index', {});
+
     this.render('microposts/index', {
       into: 'user/index',
-      outlet: 'microposts',
+      outlet: 'side-list',
       controller: 'microposts/index'
     });
   }
