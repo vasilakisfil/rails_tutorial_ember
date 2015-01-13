@@ -13,8 +13,8 @@ export default Ember.Route.extend(RouteMixin, {
 
   afterModel: function() {
     var _this = this;
-    this.findPaged('follower', {
-      user_id: this.modelFor('user').id
+    this.findPaged('user', {
+      follower_id: this.modelFor('user').id
     }).then(function(followers) {
       Ember.Logger.debug(followers);
       _this.controllerFor('user/followers').setProperties({
