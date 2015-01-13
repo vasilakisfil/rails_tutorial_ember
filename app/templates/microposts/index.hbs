@@ -8,7 +8,9 @@
         <span class="user">{{link-to micropost.user.name 'user.index' micropost.user.id}}</span>
         <span class="content">
           {{micropost.content}}
-          {{! <%= image_tag micropost.picture.url if micropost.picture? %>}}
+          {{#if micropost.picture}}
+            <img {{bind-attr src=micropost.pictureUrl}}>
+          {{/if}}
         </span>
         <span class="timestamp">
           Posted 5 minutes ago.

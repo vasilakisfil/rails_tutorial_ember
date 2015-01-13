@@ -7,6 +7,10 @@ export default DS.Model.extend({
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
 
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
+
+  pictureUrl: function() {
+    return 'http://localhost:3000/' + this.get('picture');
+  }.property()
 });
 
