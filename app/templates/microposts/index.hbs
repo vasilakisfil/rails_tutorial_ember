@@ -1,5 +1,5 @@
 {{! if hasMicroposts}}
-  <h3>Microposts ({{model.length}}) </h3>
+  <h3>Microposts ({{totalMicroposts}}) </h3>
   <ol class="microposts">
     {{#each micropost in model}}
     <li {{bind-attr class=micropost.id}}>

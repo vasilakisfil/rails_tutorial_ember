@@ -9,7 +9,7 @@ export default Ember.Route.extend(RouteMixin, {
     });
   },
 
-  perPage: 25,
+  perPage: 30,
 
   afterModel: function() {
     var _this = this;
@@ -19,7 +19,7 @@ export default Ember.Route.extend(RouteMixin, {
       Ember.Logger.debug(followers);
       _this.controllerFor('user/followers').setProperties({
         model: followers,
-        content: followers 
+        content: followers
       });
     });
   },

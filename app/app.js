@@ -10,6 +10,9 @@ var App = Ember.Application.extend({
   podModulePrefix: config.podModulePrefix,
   Resolver: Resolver,
   LOG_TRANSITIONS: true,
+  ready: function() {
+    this.devTools.globalize();
+  }
 });
 
 loadInitializers(App, config.modulePrefix);
