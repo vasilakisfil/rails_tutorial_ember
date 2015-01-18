@@ -7,14 +7,14 @@
 
 <section class="stats">
   <div class="stats">
-    {{#link-to 'user.following'}}
+    {{#link-to 'user.following' model}}
       <strong id="following" class="stat">
         {{model.followings.length}}
       </strong>
       following
     {{/link-to}}
 
-    {{#link-to 'user.followers'}}
+    {{#link-to 'user.followers' model}}
       <strong id="followers" class="stat">
         {{model.followers.length}}
       </strong>
