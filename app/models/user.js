@@ -7,6 +7,9 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   name: DS.attr('string'),
 
+  password: DS.attr('string'),
+  passwordConfirmation: DS.attr('string'),
+
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
 

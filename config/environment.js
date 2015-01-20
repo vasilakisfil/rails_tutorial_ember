@@ -16,7 +16,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
   };
 
   if (environment === 'development') {
@@ -29,7 +29,7 @@ module.exports = function(environment) {
         'connect-src': "'self'  'unsafe-eval' http://*:3000",
         'style-src': "'self'",
         'script-src': "'self'  'unsafe-eval' http://*:3000",
-        'img-src': "'self' https://www.gravatar.com http://www.gravatar.com",
+        'img-src': "'self' https://www.gravatar.com http://www.gravatar.com http://*:3000",
     }
   }
 

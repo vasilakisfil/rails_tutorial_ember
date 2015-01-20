@@ -9,8 +9,10 @@ Router.map(function() {
   this.route('help');
   this.route('about');
   this.route('contact');
+  this.route('users.new', {path: '/signup'});
   this.resource('users', function() {
     this.resource('user', { path: ':user_id'}, function() {
+      this.route('edit');
       this.route('followers');
       this.route('following');
     });
