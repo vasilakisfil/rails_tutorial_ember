@@ -1,10 +1,10 @@
 <div class="row">
   <aside class="col-md-4">
-    {{user-profile model=model gravatarUsers=gravatarUsers}}
+    {{user-profile model=user gravatarUsers=gravatarUsers}}
     <section class="micropost_form">
-      <form class="form-basic" role="form" {{action 'submitForm' on='submit'}}>
+      <form class="form-basic" role="form" {{action 'createMicropost' on='submit'}}>
         <div class="field">
-          {{textarea cols="80" rows="4" placeholder="Compose new micropost..."}}
+          {{textarea cols="80" value=micropost.content rows="4" placeholder="Compose new micropost..."}}
         </div>
 
         <input type="submit" class="btn btn-primary">

@@ -11,6 +11,6 @@ export default DS.Model.extend({
 
   pictureUrl: function() {
     return 'http://localhost:3000/' + this.get('picture');
-  }.property()
+  }.property('picture')
 });
 
