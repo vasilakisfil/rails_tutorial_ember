@@ -20,7 +20,7 @@ export default Ember.Route.extend(RouteMixin, {
 
   perPage: 30,
 
-  afterModel: function(user) {
+  afterModel: function() {
     var _this = this;
     this.findPaged('micropost', {user_id: 1}).then(function(microposts) {
       _this.controllerFor('microposts/index').setProperties({
@@ -28,14 +28,6 @@ export default Ember.Route.extend(RouteMixin, {
         content: microposts
       });
     });
-    /*
-    this.store.find('micropost', {user_id: 1}).then(function(microposts) {
-      _this.controllerFor('microposts/index').setProperties({
-        model: microposts,
-        content: microposts
-      });
-    });
-    */
   },
 
   renderTemplate: function() {
