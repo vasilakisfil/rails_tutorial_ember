@@ -17,6 +17,14 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:devise',
+      crossOriginWhitelist: ['*']
+    },
+    'simple-auth-devise': {
+      serverTokenEndpoint: 'http://localhost:3000/api/v1/sessions',
+      tokenAttributeName: 'token'
+    }
   };
 
   if (environment === 'development') {
@@ -43,10 +51,14 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
   }
 
   if (environment === 'production') {
 
+    ENV['simple-auth-devise'] = {
+      serverTokenEndpoint: 'api/v1/sessions'
+    }
   }
 
   return ENV;

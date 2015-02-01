@@ -15,6 +15,7 @@
     "qunit": "~1.15.0",
     "ember-addons.bs_for_ember": "~0.7.0",
     "bootstrap-sass-official": "~3.3.1",
-    "JavaScript-MD5": "~1.1.0"
+    "JavaScript-MD5": "~1.1.0",
+    "ember-simple-auth": "0.7.2"
   }
 }
