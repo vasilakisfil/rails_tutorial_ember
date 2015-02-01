@@ -13,7 +13,7 @@
           {{/if}}
         </span>
         <span class="timestamp">
-          Posted 5 minutes ago.
+          {{time-ago micropost.createdAt}}
           {{!
             <%= link_to "delete", micropost, method: :delete,
                                              data: { confirm: "You sure?" } %>
