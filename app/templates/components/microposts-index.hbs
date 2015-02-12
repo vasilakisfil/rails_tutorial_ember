@@ -20,7 +20,7 @@
         <span class="timestamp">
           {{time-ago micropost.createdAt}}
           {{#if micropost.isAuthor}}
-            <a href="#">delete</a>
+          <a href="#" {{action 'deleteMicropost'}}>delete</a>
           {{/if}}
         </span>
       </li>

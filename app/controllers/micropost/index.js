@@ -5,7 +5,13 @@ export default Ember.ObjectController.extend({
     if (this.get('session.id').toString() === this.get('model.user.id').toString()) {
       return true;
     } else { return false; }
-  }.property()
+  }.property(),
+
+  actions: {
+    deleteMicropost: function() {
+      this.get('model').destroyRecord();
+    }
+  }
 });
 
 
