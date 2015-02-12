@@ -23,7 +23,8 @@ module.exports = function(environment) {
     },
     'simple-auth-devise': {
       serverTokenEndpoint: 'http://localhost:3000/api/v1/sessions',
-      tokenAttributeName: 'token'
+      tokenAttributeName: 'token',
+      identificationAttributeName: 'email'
     }
   };
 

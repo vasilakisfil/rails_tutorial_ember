@@ -4,16 +4,16 @@ import Session from 'simple-auth/session';
 export function initialize(container) {
   Session.reopen({
     setCurrentUser: function() {
-      var id = this.get('user_id'),
-          self = this;
+      var id = this.get('id');
+      var _this = this;
 
       if (!Ember.isEmpty(id)) {
         return container.lookup('store:main').find('user', id)
           .then(function(user) {
-            self.set('currentUser', user);
+            _this.set('currentUser', user);
           });
       }
-    }.observes('user_id')
+    }.observes('id')
   });
 }
 

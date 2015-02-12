@@ -1,29 +1,4 @@
-{{#if model.length}}
-  <h3>Microposts Feed </h3>
-  <ol class="microposts">
-    {{#each micropost in model}}
-    <li {{bind-attr class=micropost.id}}>
-        {{gravatar-image email=micropost.user.email alt=micropost.user.name size=50 class='gravatar'}}
-
-        <span class="user">{{link-to micropost.user.name 'user.index' micropost.user.id}}</span>
-        <span class="content">
-          {{micropost.content}}
-          {{#if micropost.picture}}
-            <img {{bind-attr src=micropost.pictureUrl}}>
-          {{/if}}
-        </span>
-        <span class="timestamp">
-          {{time-ago micropost.createdAt}}
-          {{!
-            <%= link_to "delete", micropost, method: :delete,
-                                             data: { confirm: "You sure?" } %>
-          }}
-        </span>
-      </li>
-
-    {{/each}}
-  </ol>
-
-  {{page-numbers content=content numPagesToShow=4}}
-{{/if}}
-
+{{microposts-index
+  title="Micropost Feed"
+  model=model
+}}

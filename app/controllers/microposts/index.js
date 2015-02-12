@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
+  itemController: 'micropost/index',
   // setup our query params
   queryParams: ["page", "perPage"],
 
