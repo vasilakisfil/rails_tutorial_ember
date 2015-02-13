@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  isCurrentUser: function() {
+    if (this.get('session.currentUser.id') === this.get('model.id')) { return true; }
+  }.property('model.id'),
+
   isFollower: function() {
     if (this.get('session.currentUser.followings').findBy('id', this.get('model.id'))) {
       this.set('isFollower', true);

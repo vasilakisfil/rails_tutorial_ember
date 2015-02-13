@@ -12,8 +12,8 @@
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="/users/101">Profile</a></li>
-              <li><a href="/users/101/edit">Settings</a></li>
+              <li>{{link-to 'Profile' 'user.index' session.currentUser}}</li>
+              <li>{{link-to 'Settings' 'user.edit' session.currentUser}}</li>
               <li class="divider"></li>
               <li>
               <a {{ action 'invalidateSession' }}>Log out</a>
@@ -33,8 +33,9 @@
 
   <footer class="footer">
     <small>
-      The <a href="http://www.railstutorial.org/">Ember on Rails Tutorial</a>
+      The <a href="http://www.railstutorial.org/">Ember on Rails</a>
       by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
+      and <a href="http://fil.vasilak.is/">Filippos Vasilakis</a>
     </small>
     <nav>
       <ul>

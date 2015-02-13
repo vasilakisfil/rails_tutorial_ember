@@ -3,15 +3,17 @@
     {{user-profile model=model gravatarUsers=gravatarUsers}}
   </aside>
   <div class="col-md-8">
-    <div id="follow_form">
-      <form>
-        {{#if isFollower}}
-          <input type="submit" name="commit" value="Unfollow" class="btn" {{action 'unfollowUser'}} />
-        {{else}}
-          <input type="submit" name="commit" value="Follow" class="btn btn-primary" {{action 'followUser'}} />
-        {{/if}}
-      </form>
-    </div>
+    {{#unless isCurrentUser}}
+      <div id="follow_form">
+        <form>
+          {{#if isFollower}}
+            <input type="submit" name="commit" value="Unfollow" class="btn" {{action 'unfollowUser'}} />
+          {{else}}
+            <input type="submit" name="commit" value="Follow" class="btn btn-primary" {{action 'followUser'}} />
+          {{/if}}
+        </form>
+      </div>
+    {{/unless}}
     {{outlet 'side-list'}}
   </div>
 </div>
