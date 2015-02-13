@@ -11,5 +11,16 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       return true;
     }
   },
+
+  actions: {
+    error: function (errorObject) {
+      if (errorObject) {
+        if (errorObject.status === 401) {
+          return this.transitionTo('login');
+        }
+      }
+      else { return true; }
+    }
+  }
 });
 

@@ -19,4 +19,3 @@ export default Ember.ArrayController.extend({
     return this.get('store').metadataFor('micropost').total_count;
   }.property('model')
 });
-
