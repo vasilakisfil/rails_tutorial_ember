@@ -18,6 +18,10 @@ export default Ember.Route.extend(RouteMixin, {
     });
   },
 
+  setupController: function(controller, model) {
+    controller.set('model', model);
+  },
+
   renderTemplate: function() {
     this.render('user/index', {});
 
