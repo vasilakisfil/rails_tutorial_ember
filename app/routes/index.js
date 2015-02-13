@@ -25,7 +25,7 @@ export default Ember.Route.extend(RouteMixin, {
   afterModel: function() {
     var _this = this;
     if (this.get('session.isAuthenticated')) {
-      this.findPaged('feed', {user_id: 1}).then(function(microposts) {
+      this.findPaged('micropost', {user_id: 1, feed: true}).then(function(microposts) {
         _this.controllerFor('microposts/index').setProperties({
           model: microposts,
           content: microposts
