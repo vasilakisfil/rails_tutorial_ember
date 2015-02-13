@@ -18,7 +18,7 @@
           {{/if}}
         </span>
         <span class="timestamp">
-          {{time-ago micropost.createdAt}}
+          Posted about {{time-ago micropost.createdAt}}.
           {{#if micropost.isAuthor}}
           <a href="#" {{action 'deleteMicropost'}}>delete</a>
           {{/if}}
