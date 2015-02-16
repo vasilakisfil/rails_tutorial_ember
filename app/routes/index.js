@@ -11,7 +11,7 @@ export default Ember.Route.extend(RouteMixin, {
     controller.set('model', model);
     if (this.get('session.isAuthenticated')) {
       //this part will be replaced with the user saved in the session
-      this.store.find('user', 1).then(function(user) {
+      this.store.find('user', this.get('session.id')).then(function(user) {
         controller.set('user', user);
         controller.set(
           'micropost',
@@ -25,7 +25,7 @@ export default Ember.Route.extend(RouteMixin, {
   afterModel: function() {
     var _this = this;
     if (this.get('session.isAuthenticated')) {
-      this.findPaged('micropost', {user_id: 1, feed: true}).then(function(microposts) {
+      this.findPaged('micropost', {user_id: this.get('session.id'), feed: true}).then(function(microposts) {
         _this.controllerFor('microposts/index').setProperties({
           model: microposts,
           content: microposts

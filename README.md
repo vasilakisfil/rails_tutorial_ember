@@ -1,6 +1,6 @@
 # Rails-tutorial-ember
 
-Michael Hart's Rails tutorial.. on Ember!
+Michael Hart's Rails tutorial.. on Ember! Check the [rails backend API](https://github.com/vasilakisfil/rails_tutorial_api).
 
 ## Prerequisites
 

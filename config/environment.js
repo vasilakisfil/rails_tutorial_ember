@@ -29,6 +29,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.APP.SERVER_URL = 'http://localhost:3000';
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -41,6 +42,7 @@ module.exports = function(environment) {
         'img-src': "'self' https://www.gravatar.com http://www.gravatar.com http://*:3000 " +
                 "https://pbs.twimg.com/profile_images/2326095089/3s1seyc0csl75btyw1vl.png"
     }
+
   }
 
   if (environment === 'test') {
@@ -58,8 +60,11 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+    ENV.APP.SERVER_URL = 'https://rails-tutorial-api.herokuapp.com';
     ENV['simple-auth-devise'] = {
-      serverTokenEndpoint: 'api/v1/sessions'
+      serverTokenEndpoint: 'https://rails-tutorial-api.herokuapp.com/api/v1/sessions',
+      tokenAttributeName: 'token',
+      identificationAttributeName: 'email'
     }
   }
 

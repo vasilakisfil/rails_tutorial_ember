@@ -9,8 +9,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     sessionAuthenticationSucceeded: function() {
       this.transitionTo('index');
     },
-    sessionAuthenticationFailed: function(error) {
-      Ember.Logger.debug('hellooo', error);
+    sessionAuthenticationFailed: function() {
       this.controllerFor('login').set('loginError', true);
     }
   }
