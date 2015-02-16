@@ -1,9 +1,10 @@
 import Ember from 'ember';
 import DS from 'ember-data';
+import ENV from 'rails-tutorial-ember/config/environment';
 
 export default DS.ActiveModelAdapter.extend({
   namespace: 'api/v1',
-  host: 'http://localhost:3000',
+  host: ENV.APP.SERVER_URL,
 
   pathForType: function(type) {
     var decamelized = Ember.String.decamelize(type);
