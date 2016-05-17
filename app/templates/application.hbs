@@ -1,3 +1,47 @@
-<h2 id="title">Welcome to Ember</h2>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <a id="logo" href="/">sample app</a>
+    <nav>
+      <ul class="nav navbar-nav pull-right">
+        <li>{{link-to 'Home' 'application'}}</li>
+        <li>{{link-to 'Help' 'help'}}</li>
+        {{#if session.isAuthenticated}}
+          <li>{{link-to 'Users' 'users.index'}}</li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>{{link-to 'Profile' 'user.index' session.currentUser}}</li>
+              <li>{{link-to 'Settings' 'user.edit' session.currentUser}}</li>
+              <li class="divider"></li>
+              <li>
+              <a {{ action 'invalidateSession' }}>Log out</a>
+              </li>
+            </ul>
+          </li>
+        {{else}}
+          <li>{{link-to 'Log in' 'login'}}</li>
+        {{/if}}
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  {{outlet}}
 
-{{outlet}}
+  <footer class="footer">
+    <small>
+      The <a href="http://www.railstutorial.org/">Ember on Rails</a>
+      by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
+      and <a href="http://fil.vasilak.is/">Filippos Vasilakis</a>
+    </small>
+    <nav>
+      <ul>
+        <li>{{link-to 'About' 'about'}}</li>
+        <li>{{link-to 'Contact' 'contact'}}</li>
+        <li><a href="http://news.railstutorial.org/">News</a></li>
+      </ul>
+    </nav>
+  </footer>
+</div>
