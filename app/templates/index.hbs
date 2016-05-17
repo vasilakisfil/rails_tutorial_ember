@@ -1,1 +1,37 @@
-<p> hello! </p>
+{{#if session.isAuthenticated}}
+<div class="row">
+  <aside class="col-md-4">
+    {{!user-profile model=user gravatarUsers=gravatarUsers}}
+    <section class="micropost_form">
+      <form class="form-basic" role="form" {{action 'createMicropost' on='submit'}}>
+        <div class="field">
+          {{textarea cols="80" value=micropost.content rows="4" placeholder="Compose new micropost..."}}
+        </div>
+
+        <input type="submit" class="btn btn-primary">
+      </form>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    {{! <%= render 'follow_form' if logged_in? %> }}
+    {{!outlet 'side-list'}}
+  </div>
+</div>
+{{else}}
+  <div class="center jumbotron">
+    <h1>Welcome to the Sample App</h1>
+    
+    <h2>
+      This is the home page for the 
+      <a href="https://github.com/vasilakisfil/rails_tutorial_ember">Ember on Rails Tutorial</a>
+      sample application.
+    </h2>
+    
+    {{link-to "Sign up now!" 'users.new' class="btn btn-lg btn-primary"}}
+  </div>
+
+  <a href="http://emberjs.com/">
+    <img src="https://pbs.twimg.com/profile_images/2326095089/3s1seyc0csl75btyw1vl.png" alt="Ember logo" class="ember-logo">
+  </a>
+  
+{{/if}}
