@@ -2,22 +2,33 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="TrZcJaPDS3bk4amb26azqbBLPTlHGvut1d8phQteR1xdp5L9ZniJT/2TxU1Dv/qBq+bJUbYzYKblUFxGRIDdKw==" />
-      
-    
+
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        The form contains. 
+      </div>
+      <ul>
+        <li>msg</li>
+      </ul>
+    </div>
+
+    {{#each model.errors.email as |error|}}
+      <div class="error">{{error.message}}</div>
+    {{/each}}
+    <form {{action (route-action 'createUser' model) on="submit"}}>
       <label for="user_name">Name</label>
-      <input class="form-control" type="text" name="user[name]" id="user_name" />
+      {{input class="form-control" type="text" value=model.name id="user_name"}}
       
       <label for="user_email">Email</label>
-      <input class="form-control" type="text" name="user[email]" id="user_email" />
+      {{input class="form-control" type="text" value=model.email id="user_email"}}
       
       <label for="user_password">Password</label>
-      <input class="form-control" type="password" name="user[password]" id="user_password" />
+      {{input class="form-control" type="password" value=model.password id="user_password"}}
       
       <label for="user_password_confirmation">Confirmation</label>
-      <input class="form-control" type="password" name="user[password_confirmation]" id="user_password_confirmation" />
-      
-      <input type="submit" name="commit" value="Create my account" class="btn btn-primary" />
+      {{input class="form-control" type="password" value=model.passwordConfirmation id="user_password_confirmation"}}
+
+      <input type="submit" value="Create my account" class="btn btn-primary" />
     </form>
   </div>
 </div>
