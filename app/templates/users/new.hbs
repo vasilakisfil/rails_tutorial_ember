@@ -3,18 +3,8 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-    <div id="error_explanation">
-      <div class="alert alert-danger">
-        The form contains. 
-      </div>
-      <ul>
-        <li>msg</li>
-      </ul>
-    </div>
+    {{resource-errors errors=model.errors}}
 
-    {{#each model.errors.email as |error|}}
-      <div class="error">{{error.message}}</div>
-    {{/each}}
     <form {{action (route-action 'createUser' model) on="submit"}}>
       <label for="user_name">Name</label>
       {{input class="form-control" type="text" value=model.name id="user_name"}}

@@ -1,0 +1,12 @@
+{{#if errors}}
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains {{errors.length}} {{pluralize 'error' amount=1}}.
+    </div>
+    <ul>
+      {{#each errors as |error|}}
+        <li>{{humanize error.attribute}} {{error.message}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}

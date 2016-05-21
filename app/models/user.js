@@ -6,5 +6,14 @@ export default Model.extend({
   name:  attr('string'),
   password:  attr('string'),
 
-  passwordConfirmation: null
+  passwordConfirmation: null,
+
+  valid() {
+    this.get('errors')._clear();
+
+    if (this.get('password') === this.get('passwordConfirmation')) { return true;}
+
+    this.get('errors')._add('passwordConfirmation', 'is not the same with the password');
+    return false;
+  }
 });
