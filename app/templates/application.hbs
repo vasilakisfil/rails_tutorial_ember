@@ -16,12 +16,12 @@
               <li>{{link-to 'Settings' 'user.edit' session.currentUser}}</li>
               <li class="divider"></li>
               <li>
-              <a {{ action 'invalidateSession' }}>Log out</a>
+              <a {{action (route-action 'destroySession')}}>Log out</a>
               </li>
             </ul>
           </li>
         {{else}}
-          <li>{{link-to 'Log in' 'login'}}</li>
+          <li>{{link-to 'Log in' 'sessions.new'}}</li>
         {{/if}}
       </ul>
     </nav>

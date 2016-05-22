@@ -18,8 +18,13 @@ module.exports = function(environment) {
       // when it is created
     },
     'ember-devtools': {
-      global: true,
+      global: 'dev',
       enabled: environment === 'development'
+    },
+    'ember-simple-auth': {
+      authenticationRoute: 'sessions.new',
+      routeAfterAuthentication: 'index',
+      routeIfAlreadyAuthenticated: 'index'
     }
   };
 

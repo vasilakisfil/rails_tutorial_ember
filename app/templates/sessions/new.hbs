@@ -1,0 +1,30 @@
+<h1>Log in</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    {{#if loginError}}
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        Invalid email/password combination
+      </div>
+    </div>
+    {{/if}}
+
+    <form class="form-basic" role="form" {{action (route-action 'createSession' model) on='submit'}}>
+      <label for="user_email">Email</label>
+      {{input class="form-control" type="email" value=model.identifier size="50"}}
+
+      <label for="user_password">Password</label> {{link-to '(forgot password)' 'users.new'}}
+      {{input class="form-control" type="password" value=model.password size="50"}}
+
+      <label class="checkbox inline" for="session_remember_me">
+        {{input type="checkbox" name="session_remember_me" checked=isAdmin}}
+        <span>Remember me on this computer</span>
+      </label>
+
+      <input type="submit" value="Log in" class="btn btn-primary">
+    </form>
+    <p>New user? {{link-to 'Sign up now!' 'users.new'}}</p>
+  </div>
+</div>
