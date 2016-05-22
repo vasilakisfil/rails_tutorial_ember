@@ -14,9 +14,9 @@ Router.map(function() {
   this.route('users.new', {path: '/signup'});
 
   this.route('users', function() {
-    this.route('user', {path: ':user_id'}, function() {
-      this.route('edit');
-    });
+  });
+  this.route('user', {path: '/users/:user_id'}, function() {
+    this.route('edit');
   });
 });
 

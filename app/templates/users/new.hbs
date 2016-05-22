@@ -3,22 +3,6 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-    {{resource-errors errors=model.errors}}
-
-    <form {{action (route-action 'createUser' model) on="submit"}}>
-      <label for="user_name">Name</label>
-      {{input class="form-control" type="text" value=model.name id="user_name"}}
-      
-      <label for="user_email">Email</label>
-      {{input class="form-control" type="text" value=model.email id="user_email"}}
-      
-      <label for="user_password">Password</label>
-      {{input class="form-control" type="password" value=model.password id="user_password"}}
-      
-      <label for="user_password_confirmation">Confirmation</label>
-      {{input class="form-control" type="password" value=model.passwordConfirmation id="user_password_confirmation"}}
-
-      <input type="submit" value="Create my account" class="btn btn-primary" />
-    </form>
+    {{signup-form model=model createUser='createUser'}}
   </div>
 </div>

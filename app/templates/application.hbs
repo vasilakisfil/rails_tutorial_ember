@@ -7,19 +7,19 @@
         <li>{{link-to 'Help' 'help'}}</li>
         {{#if session.isAuthenticated}}
           <li>{{link-to 'Users' 'users.index'}}</li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          {{#bs-dropdown tagName="li"}}
+            {{#bs-dropdown-toggle}}
               Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li>{{link-to 'Profile' 'user.index' session.currentUser}}</li>
-              <li>{{link-to 'Settings' 'user.edit' session.currentUser}}</li>
+            {{/bs-dropdown-toggle}}
+            {{#bs-dropdown-menu}}
+              <li>{{link-to 'Profile' 'user.index' session.data.authenticated.id}}</li>
+              <li>{{link-to 'Settings' 'user.edit' session.data.authenticated.id}}</li>
               <li class="divider"></li>
               <li>
-              <a {{action (route-action 'destroySession')}}>Log out</a>
+                <a {{action (route-action 'destroySession')}} href="#">Log out</a>
               </li>
-            </ul>
-          </li>
+            {{/bs-dropdown-menu}}
+          {{/bs-dropdown}}
         {{else}}
           <li>{{link-to 'Log in' 'sessions.new'}}</li>
         {{/if}}

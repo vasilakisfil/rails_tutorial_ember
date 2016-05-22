@@ -14,7 +14,12 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     },
     destroySession() {
       this.get('session').invalidate();
-    }
+    },
+  },
+
+  sessionInvalidated() {
+    this.transitionTo('index');
+    return true;
   }
 });
 
