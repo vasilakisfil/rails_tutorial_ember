@@ -1,7 +1,7 @@
 {{#if session.isAuthenticated}}
 <div class="row">
   <aside class="col-md-4">
-    {{!user-profile model=user gravatarUsers=gravatarUsers}}
+    {{user-profile model=model gravatarUsers=gravatarUsers}}
     <section class="micropost_form">
       <form class="form-basic" role="form" {{action 'createMicropost' on='submit'}}>
         <div class="field">
@@ -13,8 +13,10 @@
     </section>
   </aside>
   <div class="col-md-8">
-    {{! <%= render 'follow_form' if logged_in? %> }}
-    {{!outlet 'side-list'}}
+    {{microposts-index
+      title="Micropost Feed"
+      model=micropostsFeed
+    }}
   </div>
 </div>
 {{else}}

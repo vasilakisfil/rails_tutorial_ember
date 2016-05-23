@@ -17,6 +17,8 @@ Router.map(function() {
   });
   this.route('user', {path: '/users/:user_id'}, function() {
     this.route('edit');
+    this.route('following');
+    this.route('followers');
   });
 });
 

@@ -1,0 +1,31 @@
+<section class="user_info">
+  <h1>
+    {{gravatar-image email=model.email alt=model.name size=80 class='gravatar'}}
+    {{model.name}}
+  </h1>
+</section>
+
+<section class="stats">
+  <div class="stats">
+    {{#link-to 'user.following' model}}
+      <strong id="following" class="stat">
+        {{model.followings.length}}
+      </strong>
+      following
+    {{/link-to}}
+
+    {{#link-to 'user.followers' model}}
+      <strong id="followers" class="stat">
+        {{model.followers.length}}
+      </strong>
+      followers
+    {{/link-to}}
+  </div>
+  <div class="user_avatars">
+    {{#each gravatarUsers as |follower|}}
+      {{#link-to 'user.index' follower.id}}
+        {{gravatar-image email=follower.email alt=follower.name size=30 class='gravatar'}}
+      {{/link-to}}
+    {{/each}}
+  </div>
+</section>
