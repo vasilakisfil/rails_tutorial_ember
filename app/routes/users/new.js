@@ -7,7 +7,6 @@ export default Ember.Route.extend({
 
   actions: {
     createUser(user) {
-      var _this = this;
       if (!user.valid()) { return false; }
 
       user.save().then(function() {

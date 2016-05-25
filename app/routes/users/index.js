@@ -13,7 +13,4 @@ export default Ember.Route.extend( {
   model(params) {
     return this.store.query('user', {page: params.page, per_page: params.per_page});
   }
-
-
 });
-

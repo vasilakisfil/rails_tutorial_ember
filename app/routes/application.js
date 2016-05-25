@@ -22,4 +22,3 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     return true;
   }
 });
-

@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   notify: Ember.inject.service('notify'),
 
-  model(params) {
+  model() {
     return this.modelFor('user').get('user');
   },
 
@@ -17,7 +17,7 @@ export default Ember.Route.extend({
           'password': null,
           'passwordConfirmation': null
         });
-        _this.get('notify').success('User saved!');
+        _this.get('notify').success('Your profile is saved!');
       });
     }
   }

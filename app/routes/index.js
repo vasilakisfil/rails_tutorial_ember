@@ -30,15 +30,15 @@ export default Ember.Route.extend({
         'user', this.get('session.data.authenticated.id')
       ).then(function(user) {
         micropost.set('user', user);
-        micropost.save().then(function(micropost) {
+        micropost.save().then(function(/*micropost*/) {
           _this.refresh();
-          //_this.lightweightRefresh();
+          //_this.lightweightRefresh(micropost);
         });
       });
     }
-  }
+  },
 
-  lightweightRefresh() {
+  lightweightRefresh(micropost) {
     Ember.set(
       this.modelFor('index'),
       'micropost',

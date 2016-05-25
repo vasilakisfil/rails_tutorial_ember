@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   notify: Ember.inject.service('notify'),
 
-  model(params) {
+  model() {
     return this.modelFor('user');
   },
 
@@ -19,7 +19,7 @@ export default Ember.Route.extend({
       } else {
         controller.set('isFollower', false);
       }
-    })
+    });
   },
 
   actions: {
@@ -32,7 +32,7 @@ export default Ember.Route.extend({
         ) + '/followers/' + user.id,
         "POST",
         {}
-      ).then(function(following) {
+      ).then(function() {
         _this.controllerFor('user.index').set('isFollower', true);
       });
     },
@@ -46,7 +46,7 @@ export default Ember.Route.extend({
         ) + '/followers/' + user.id,
         "DELETE",
         {}
-      ).then(function(following) {
+      ).then(function() {
         _this.controllerFor('user.index').set('isFollower', false);
       });
     }
