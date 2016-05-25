@@ -1,0 +1,11 @@
+{{#unless isCurrentUser}}
+  <div id="follow_form">
+    <form>
+      {{#if isFollower}}
+        <input type="submit" name="commit" value="Unfollow" class="btn" {{action (route-action 'unfollowUser' model)}} />
+      {{else}}
+        <input type="submit" name="commit" value="Follow" class="btn btn-primary" {{action (route-action 'followUser' model)}} />
+      {{/if}}
+    </form>
+  </div>
+{{/unless}}

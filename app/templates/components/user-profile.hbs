@@ -1,22 +1,22 @@
 <section class="user_info">
   <h1>
-    {{gravatar-image email=model.email alt=model.name size=80 class='gravatar'}}
-    {{model.name}}
+    {{gravatar-image email=model.user.email alt=model.user.name size=80 class='gravatar'}}
+    {{model.user.name}}
   </h1>
 </section>
 
 <section class="stats">
   <div class="stats">
-    {{#link-to 'user.following' model}}
+    {{#link-to 'user.following' model.user}}
       <strong id="following" class="stat">
-        {{model.followings.length}}
+        {{model.userFollowing.meta.total-count}}
       </strong>
       following
     {{/link-to}}
 
-    {{#link-to 'user.followers' model}}
+    {{#link-to 'user.followers' model.user}}
       <strong id="followers" class="stat">
-        {{model.followers.length}}
+        {{model.userFollowers.meta.total-count}}
       </strong>
       followers
     {{/link-to}}

@@ -9,7 +9,7 @@
       <li class={{micropost.id}}>
         {{gravatar-image email=micropost.user.email alt=micropost.user.name size=50 class='gravatar'}}
 
-        <span class="user">{{link-to micropost.user.name 'user.index' micropost.user}}</span>
+        <span class="user">{{link-to micropost.user.name 'user.index' micropost.user.id}}</span>
         <span class="content">
           {{! here .content delegates to the proxy object content/model}}
           {{micropost.content}}

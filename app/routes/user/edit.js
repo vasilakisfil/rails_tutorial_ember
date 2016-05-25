@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   notify: Ember.inject.service('notify'),
 
   model(params) {
-    return this.modelFor('user');
+    return this.modelFor('user').get('user');
   },
 
   actions: {

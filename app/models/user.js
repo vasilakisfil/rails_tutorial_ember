@@ -14,10 +14,6 @@ export default Model.extend({
   created_at: attr('moment'),
   updated_at: attr('moment'),
 
-  microposts: hasMany('micropost', {async: true}),
-  //followings: hasMany('user', {inverse: 'followers', async: true}),
-  //followers: hasMany('user', {inverse: 'followings', async: true}),
-
   passwordConfirmation: null,
 
   valid() {
