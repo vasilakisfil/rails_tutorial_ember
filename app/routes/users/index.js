@@ -1,9 +1,19 @@
 import Ember from 'ember';
-import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
 
 export default Ember.Route.extend( {
+  queryParams: {
+    page: {
+      refreshModel: true
+    },
+    per_page: {
+      refreshModel: true
+    }
+  },
+
   model(params) {
-    return this.findPaged('user', params);
+    return this.store.query('user', {page: params.page, per_page: params.per_page});
   }
+
+
 });
 

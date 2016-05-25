@@ -1,0 +1,34 @@
+<div class="pagination-centered">
+  <ul class="pagination">
+    {{#if previousPage}}
+      <li class="arrow prev enabled-arrow">
+        {{#link-to "users.index" (query-params page=previousPage)}}&#8592; Previous{{/link-to}}
+      </li>
+    {{else}}
+      <li class="arrow prev disabled">
+        {{#link-to "users.index" (query-params page=previousPage)}}&#8592; Previous{{/link-to}}
+      </li>
+    {{/if}}
+    {{#each pageNumbers as |page|}}
+      {{#if (eq currentPage page)}}
+        <li class="active page-number">
+          <a>{{page}}</a>
+        </li>
+      {{else}}
+        <li class="page-number">
+          <a>{{page}}</a>
+        </li>
+      {{/if}}
+    {{/each}}
+
+    {{#if nextPage}}
+      <li class="arrow next enabled-arrow">
+        {{#link-to "users.index" (query-params page=nextPage)}}Next &#8594;{{/link-to}}
+      </li>
+    {{else}}
+      <li class="arrow next disabled">
+        {{#link-to "users.index" (query-params page=nextPage)}}Next &#8594;{{/link-to}}
+      </li>
+    {{/if}}
+  </ul>
+</div>

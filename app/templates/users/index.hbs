@@ -1,11 +1,18 @@
 <br>
 <ul class="users">
-{{#each this}}
+{{#each model as |user|}}
   <li>
   {{#link-to 'user.index' user.id}}{{gravatar-image email=user.email alt=user.name size=50 imgClass='gravatar'}}{{/link-to}}
   {{#link-to 'user.index' user.id}}{{user.name}}{{/link-to}}
   </li>
 {{/each}}
+
+{{page-numbers
+  nextPage=model.meta.next-page
+  previousPage=model.meta.prev-page
+  totalPages=model.meta.total-pages
+  currentPage=page
+}}
 
 </ul>
 <br>
