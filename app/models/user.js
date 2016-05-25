@@ -21,6 +21,8 @@ export default Model.extend({
   passwordConfirmation: null,
 
   valid() {
+    if (!this.get('password')) { return true; }
+
     this.get('errors')._clear();
 
     if (this.get('password') === this.get('passwordConfirmation')) { return true;}

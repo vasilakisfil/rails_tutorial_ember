@@ -1,0 +1,11 @@
+<br>
+<ul class="users">
+{{#each this}}
+  <li>
+  {{#link-to 'user.index' user.id}}{{gravatar-image email=user.email alt=user.name size=50 imgClass='gravatar'}}{{/link-to}}
+  {{#link-to 'user.index' user.id}}{{user.name}}{{/link-to}}
+  </li>
+{{/each}}
+
+</ul>
+<br>
