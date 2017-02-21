@@ -1,4 +1,6 @@
 # Rails-tutorial-ember
+**This repo is deprecated and not actively maintained.
+A new [Rails tutorial](https://github.com/vasilakisfil/rails5_api_tutorial) has been released based on Rails 5. The equivelant EmberJS app can be found [here](https://github.com/vasilakisfil/ember_on_rails5).**
 
 Michael Hart's Rails tutorial.. on Ember! Check the [rails backend API](https://github.com/vasilakisfil/rails_tutorial_api).
 Deployed [here](https://ember-on-rails-tutorial.herokuapp.com)
